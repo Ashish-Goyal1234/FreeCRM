@@ -8,13 +8,7 @@
 		<listener class-name="com.crm.qa.listeners.ExecutionListener" />
 	</listeners>
 
-	<test name="Login Test">
-		<classes>
-			<class name="com.crm.qa.loginPage.LoginPageTest" />
-		</classes>
-	</test>
-	
-	<test name="Home page Test">
+	<test name="Home Page Test">
 		<classes>
 			<class name="com.crm.qa.homePage.HomePageTest" />
 		</classes>

@@ -88,4 +88,10 @@ public class TestUtil extends TestBase {
     }
     
     
+    
+    public void switchToFrame() {
+        browserDriver.switchTo().frame("mainpanel");
+    }
+    
+    
 }

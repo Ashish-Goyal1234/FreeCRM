@@ -1,4 +1,4 @@
-package com.crm.qa.pages;
+package com.crm.qa.login;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

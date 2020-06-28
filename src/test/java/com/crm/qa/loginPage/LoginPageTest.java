@@ -6,16 +6,19 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import com.crm.qa.base.TestBase;
 import com.crm.qa.datadriven.DataProviderPage;
-import com.crm.qa.pages.LoginPage;
+import com.crm.qa.homepage.HomePage;
+import com.crm.qa.login.LoginPage;
 import com.crm.qa.util.CSLogger;
 
 public class LoginPageTest extends TestBase {
 
     private LoginPage loginPage;
+    private HomePage homePage;
 
     @BeforeMethod
     public void initializeResource() {
         loginPage = new LoginPage();
+        homePage= new HomePage();
     }
 
     /*
@@ -29,7 +32,7 @@ public class LoginPageTest extends TestBase {
      * loginpage.validateCRMImage(); Assert.assertTrue(flag); }
      */
 @Test(priority=1)
-    public void verifyElementPresent() {
+    public void verifyElementPresentTest() {
         browserDriver.get(config.getUrl());
         browserDriver.navigate().refresh();
         int elementCount = 0;
@@ -47,19 +50,46 @@ public class LoginPageTest extends TestBase {
         CSLogger.info("Login elements are present.");
     }
 
-    @Test(
-            dependsOnMethods = { "verifyElementPresent" },
+        @Test(priority=2)
+        public void verifyPageTitleOfLoginPageTest() {
+            String title = browserDriver.getTitle();
+            String Actual_title = "CRMPRO - CRM software for customer relationship management, sales, and support.";
+            if(Actual_title.contentEquals(title)){
+                CSLogger.info("Vaid Title");
+            }else{
+                CSLogger.info("Invalid Title");
+                Assert.fail("Invalid Title");
+            }
+        }
+
+    @Test(priority=3,
+            dependsOnMethods = { "verifyElementPresentTest" },
             dataProvider = "CredentailsTestData",
             dataProviderClass = DataProviderPage.class)
-    private void testLogin(String username, String password) throws InterruptedException {
+    private void testLogin(String username, String password) {
+        try{
         loginPage.getTxtUsername().sendKeys(username);
+        CSLogger.info("Entered Username");
         loginPage.getTxtPassword().sendKeys(password);
+        CSLogger.info("Entered Password");
         loginPage.clkSubmitButton();
-        CSLogger.info("Clicked on Login Button");
+        CSLogger.info("Clicked on Submit Button");
+        
+        /*WebElement homePageButton =homePage.getBtnLogout();
+        
+        if(homePageButton.isDisplayed()){
+            CSLogger.info("User Entered Valid Credential...! : "+ username +password);
+        }else{
+            CSLogger.info("User Entered Invalid Creadentials :"+ username +password);
+        } */
     }
-
+        catch(Exception e){
+            CSLogger.debug("Failed to Login");
+        }
+    }
+}
 /*    @AfterMethod
     public void tearDown() {
         browserDriver.quit()
     };*/
-}
+

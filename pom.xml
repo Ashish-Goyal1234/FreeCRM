@@ -26,9 +26,7 @@
 				<configuration>
 					<suiteXmlFiles>
 						<suiteXmlFile>src/main/resources/TestFileForLogin.xml</suiteXmlFile>
-						<!-- <suiteXmlFile>src/main/resources/TestFileForCSMam.xml</suiteXmlFile> 
-							<suiteXmlFile>src/main/resources/TestFileForSettings.xml</suiteXmlFile> <suiteXmlFile>src/main/resources/TestFileForUserManagement.xml</suiteXmlFile> 
-							<suiteXmlFile>src/main/resources/TestFileForCorePortal.xml</suiteXmlFile> -->
+						<!-- <suiteXmlFile>src/main/resources/TestFileForHomePage.xml</suiteXmlFile> -->
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
