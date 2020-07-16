@@ -1,6 +1,7 @@
 
 package com.crm.qa.loginPage;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -34,7 +35,6 @@ public class LoginPageTest extends TestBase {
 @Test(priority=1)
     public void verifyElementPresentTest() {
         browserDriver.get(config.getUrl());
-        browserDriver.navigate().refresh();
         int elementCount = 0;
         elementCount += (loginPage.getHomeLink() == null ? 0 : 1);
         elementCount += (loginPage.getSignUpLink() == null ? 0 : 1);
@@ -68,8 +68,11 @@ public class LoginPageTest extends TestBase {
             dataProviderClass = DataProviderPage.class)
     private void testLogin(String username, String password) {
         try{
+         Thread.sleep(2000);
+        waitForReload.until(ExpectedConditions.elementToBeClickable( loginPage.getTxtUsername()));
         loginPage.getTxtUsername().sendKeys(username);
         CSLogger.info("Entered Username");
+        waitForReload.until(ExpectedConditions.elementToBeClickable(loginPage.getTxtPassword()));
         loginPage.getTxtPassword().sendKeys(password);
         CSLogger.info("Entered Password");
         loginPage.clkSubmitButton();

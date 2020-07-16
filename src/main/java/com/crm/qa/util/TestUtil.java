@@ -9,11 +9,15 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Iterator;
+import java.util.Set;
 import java.util.UUID;
 import javax.imageio.ImageIO;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import com.crm.qa.base.TestBase;
 
@@ -87,7 +91,18 @@ public class TestUtil extends TestBase {
         return new SimpleDateFormat("yyyy-MM-dd").format(new Date());
     }
     
+    public void getDropDownValueUsingSelectMethod(WebElement parentElement, String ChildValue) {
+        Select select = new Select(parentElement);
+        select.selectByValue(ChildValue);
+    }
     
+    
+    public void switchToWindow() {
+       Set<String> handler =  browserDriver.getWindowHandles();   // to get all Window IDs.
+       Iterator<String> it = handler.iterator();   // Used to switch to next window.
+       String ParentWindowId = it.next();
+       CSLogger.info("Switched to Parent Window  and Parent Window ID is :"+ ParentWindowId);
+    }
     
     public void switchToFrame() {
         browserDriver.switchTo().frame("mainpanel");

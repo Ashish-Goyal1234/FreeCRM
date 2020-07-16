@@ -6,18 +6,15 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import com.crm.qa.base.TestBase;
-import com.crm.qa.homepage.HomePage;
 import com.crm.qa.util.CSLogger;
 import com.crm.qa.util.TestUtil;
 
 public class HomePageTest extends TestBase{
     
-    private HomePage homePage;
     private TestUtil testUtil;
 
     @BeforeClass
     public void Initialization() {
-        homePage = new HomePage();
         testUtil = new TestUtil();
     }
     
@@ -46,10 +43,10 @@ public class HomePageTest extends TestBase{
         }
     }
     
-    @Test(priority=3)
+  /*  @Test(priority=3)
     public void testHomePage(){
         homePage.clkContactsLink();
         CSLogger.info("clicked on contacts Page");
     }
-    
+    */
 }

@@ -19,5 +19,11 @@
 			<class name="com.crm.qa.homePage.HomePageTest" />
 		</classes>
 	</test>
+	
+	<test name="Contacts page Test">
+		<classes>
+			<class name="com.crm.qa.homePage.ContactsPageTest" />
+		</classes>
+	</test>
 
 </suite>

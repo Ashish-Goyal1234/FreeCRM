@@ -5,6 +5,7 @@
 
 package com.crm.qa.util;
 
+import java.net.MalformedURLException;
 import java.util.HashMap;
 import java.util.Map;
 import org.openqa.selenium.WebDriver;
@@ -30,6 +31,7 @@ public class BrowserFactory {
      * @param browserName String
      * @param browserVersion String
      * @return driver WebDriver Instance
+     * @throws MalformedURLException 
      */
     public WebDriver getBrowser(String browserName, String browserVersion) {
         WebDriver driver = null;

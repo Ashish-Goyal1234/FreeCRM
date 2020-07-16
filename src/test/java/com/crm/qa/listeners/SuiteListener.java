@@ -72,7 +72,7 @@ public class SuiteListener extends SuiteAdapter {
     private void loadBrowserDriverInstance(ISuite suite,
             ApplicationConfiguration1 config) {
         BrowserFactory browserFactory = new BrowserFactory();
-        WebDriver webDriverInstance = browserFactory.getBrowser(
+       WebDriver webDriverInstance = browserFactory.getBrowser(
                 config.getBrowserName(), config.getBrowserVersion());
         setTimeouts(config, webDriverInstance.manage());
         webDriverInstance.manage().window().maximize();

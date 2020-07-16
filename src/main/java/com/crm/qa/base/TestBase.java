@@ -2,7 +2,6 @@
 package com.crm.qa.base;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebDriver.Timeouts;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ISuite;
 import org.testng.ITestContext;
@@ -24,6 +23,7 @@ public abstract class TestBase {
     public static WebDriver                 browserDriver;
     public static ApplicationConfiguration1 config;
     public static DataDrivenScript          DrivenScript;
+    public WebDriverWait                       waitForReload;
 
     /**
      * This method perform operations required before the test begins.
@@ -35,6 +35,7 @@ public abstract class TestBase {
         ISuite suite = context.getSuite();
         browserDriver = (WebDriver) suite.getAttribute("driverForBrowser");
         DrivenScript = new DataDrivenScript();
+        waitForReload = new WebDriverWait(browserDriver, 180);
         config = (ApplicationConfiguration1) suite
                 .getAttribute("configurations");
         CSLogger.setClass(this);
