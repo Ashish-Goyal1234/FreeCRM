@@ -66,6 +66,9 @@ public class ContactsPageTest extends TestBase {
         CSLogger.info("Entered department in contacts page");
         contactsPage.clickBtnSupervisorLooup();
         selectSupervisorFromLookup(SearchSupervisor, SupervisorName);
+        contactsPage.enterSearchElementInTxtSupervisor(SupervisorName);
+        contactsPage.clkSaveButton();
+        CSLogger.info("Contact Added Successfully...!");
     }
     
     private void selectCompanyFromLookup(String CompanyName) {
@@ -98,7 +101,5 @@ public class ContactsPageTest extends TestBase {
         browserDriver.findElement(By.xpath("//input[@type='button' and @value='X']")).click();
         browserDriver.switchTo().window(parentWindowID);
         testUtil.switchToFrame();
-        
-        
     }
 }

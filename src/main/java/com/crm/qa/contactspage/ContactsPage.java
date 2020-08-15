@@ -47,11 +47,17 @@ public class ContactsPage extends TestBase {
     @FindBy(xpath="(//input[@value='Lookup'])[2]")
     WebElement btnSupervisorLookup;
     
+    @FindBy(xpath="//input[@name='contact_lookup_sup']")
+    WebElement txtSupervisor;
+    
     @FindBy(xpath="//input[@id='search']")
     WebElement txtSearchInLookup;
     
     @FindBy(xpath="//form[@id='lookupSearchForm']//input[@class='button']")
     WebElement btnSearchInLookup;
+    
+    @FindBy(xpath="//form[@name='contactForm']//child::table//child::tbody//child::tr//child::td//input[@value='Save']")
+    WebElement btnSave;
     
     /**
      * Getter for newContactsLink
@@ -152,6 +158,14 @@ public class ContactsPage extends TestBase {
     }
     
     /*
+     * Getter method for Textbox of Supervisor
+     * @Return WebElement
+     */
+    public WebElement getTxtSupervisor() {
+        return txtSupervisor;
+    }
+    
+    /*
      * Getter method for Searchbox which is displayed in Lookup button.
      * @return WebElement
      */
@@ -165,6 +179,14 @@ public class ContactsPage extends TestBase {
      */
     public WebElement getSearchBtnInLookup() {
         return btnSearchInLookup;
+    }
+    
+    /*
+     * Getter Method for save button.
+     * @return webelement
+     */
+    public WebElement getBtnSaveContact() {
+        return btnSave;
     }
 
     /**
@@ -264,6 +286,11 @@ public class ContactsPage extends TestBase {
         CSLogger.info("Clicked on Lookup button displayed in front of Supervisor Text Field");
     }
     
+    
+    public void enterSearchElementInTxtSupervisor(String supervisorName) {
+        getTxtSupervisor().sendKeys(supervisorName);
+    }
+    
     /*
      * This Method will enter text to search.
      * @Search string value contains Search characters.
@@ -282,7 +309,13 @@ public class ContactsPage extends TestBase {
     }
     
     
-    
+    /*
+     * This method will click on save button 
+     */
+    public void clkSaveButton() {
+        getBtnSaveContact().click();
+        CSLogger.info("Clicked on Save Button displayed in Contacts Information..!");
+    }
     
     
     
