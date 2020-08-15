@@ -51,13 +51,19 @@ public class ContactsPageTest extends TestBase {
         testUtil.getDropDownValueUsingSelectMethod(contactsPage.getTitle(),
                 title);
         contactsPage.enterFirstName(firstName);
+        CSLogger.info("Entered first name in contacts page");
         contactsPage.enterMiddleName(middleName);
+        CSLogger.info("Entered middle name in contacts page");
         contactsPage.enterLastName(lastName);
+        CSLogger.info("Entered last name in contacts page");
         contactsPage.enterNickName(nickName);
+        CSLogger.info("Entered Nick name in contacts page");
         contactsPage.clkCompanyLookup();
         selectCompanyFromLookup(companyName);
         contactsPage.enterPositionName(position);
+        CSLogger.info("Entered Position in contacts page");
         contactsPage.enterDepartmentName(departmentName);
+        CSLogger.info("Entered department in contacts page");
         contactsPage.clickBtnSupervisorLooup();
         selectSupervisorFromLookup(SearchSupervisor, SupervisorName);
     }
@@ -89,7 +95,7 @@ public class ContactsPageTest extends TestBase {
         CSLogger.info("Title to the Supervisor Lookup window" + browserDriver.getTitle());
         contactsPage.enterSearchElementInLookupSearchBox(SearchSupervisor);
         contactsPage.clkSearchBtnInLookup();
-        browserDriver.findElement(By.xpath("(//a[text()='"+SupervisorName+"'])[1]")).click();
+        browserDriver.findElement(By.xpath("//input[@type='button' and @value='X']")).click();
         browserDriver.switchTo().window(parentWindowID);
         testUtil.switchToFrame();
         

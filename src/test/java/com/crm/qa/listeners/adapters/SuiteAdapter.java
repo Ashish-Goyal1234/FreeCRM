@@ -30,4 +30,9 @@ public abstract class SuiteAdapter implements ISuiteListener {
          */
     }
 
+    public void onStart(ISuite suite, String Port) {
+        // TODO Auto-generated method stub
+        
+    }
+
 }
