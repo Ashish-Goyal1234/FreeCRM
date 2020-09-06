@@ -26,6 +26,7 @@
 				<configuration>
 					<suiteXmlFiles>
 						<suiteXmlFile>src/main/resources/TestFileForHomePage.xml</suiteXmlFile>
+						<suiteXmlFile>src/main/resources/TestFileForContactsPage.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>

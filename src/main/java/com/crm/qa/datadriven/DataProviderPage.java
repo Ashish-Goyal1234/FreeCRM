@@ -8,6 +8,7 @@ public class DataProviderPage extends TestBase {
 	
 	private String LoginSheetName				 = "Logintest";
 	private String contactsDetailsSheetName                           = "NewContactsDetailstest";
+	private String deleteContactsSheetName                 = "DeleteContacts";
 	
 	@DataProvider(name = "CredentailsTestData")
 	public Object[][] getCredentailsTestData() {
@@ -18,4 +19,9 @@ public class DataProviderPage extends TestBase {
         public Object[][] getNewContactsDetailsTestData() {
                 return DataDrivenScript.readSheetData(config.getExcelSheetPath("contactsTestCases"), contactsDetailsSheetName);
         }
+	
+	@DataProvider(name="DeleteContactsDetailsTestData")
+	public Object[][] getDeleteContactsDetailsTestData() {
+	    return DataDrivenScript.readSheetData(config.getExcelSheetPath("contactsTestCases"), deleteContactsSheetName);
+	}
 }

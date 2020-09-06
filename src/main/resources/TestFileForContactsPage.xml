@@ -9,7 +9,7 @@
 	</listeners>
 
 	<test name="Login Test">
-		<classes>	
+		<classes>
 			<class name="com.crm.qa.loginpage.LoginPageTest" />
 		</classes>
 	</test>
@@ -19,11 +19,26 @@
 			<class name="com.crm.qa.homepage.HomePageTest" />
 		</classes>
 	</test>
-	
-		<test name="Logout Test">
+
+	<test name="Create Contacts Test">
+		<classes>
+			<class name="com.crm.qa.test.contactspage.CreateContactsTest" />
+		</classes>
+	</test>
+
+	<test name="Delete Contacts Test">
+		<classes>
+			<class name="com.crm.qa.test.contactspage.DeleteContactsTest" />
+		</classes>
+	</test>
+
+	<test name="Logout Test">
 		<classes>
 			<class name="com.crm.qa.logout.LogoutPageTest" />
 		</classes>
 	</test>
+
+
+
 
 </suite>

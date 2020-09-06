@@ -108,5 +108,14 @@ public class TestUtil extends TestBase {
         browserDriver.switchTo().frame("mainpanel");
     }
     
+    public static void TempMethodForSleep(int wait) {
+        try{
+        Thread.sleep(wait);
+        CSLogger.info("Waiting for :"+ wait);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    
     
 }

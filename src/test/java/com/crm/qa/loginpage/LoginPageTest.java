@@ -1,5 +1,5 @@
 
-package com.crm.qa.loginPage;
+package com.crm.qa.loginpage;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;

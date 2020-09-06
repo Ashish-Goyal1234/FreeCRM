@@ -3,6 +3,7 @@ package com.crm.qa.contactspage;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import com.crm.qa.base.TestBase;
 import com.crm.qa.util.CSLogger;
@@ -14,50 +15,72 @@ public class ContactsPage extends TestBase {
         CSLogger.info("Initializing Page Factory for Contacts Page");
     }
 
+    @FindBy(css = "a[title*='Contacts']")  // * means Contains tile 'contacts'
+    private WebElement contacts;
+    
     @FindBy(xpath = "//a[contains(text(),'New Contact')]")
-    WebElement newContactsLink;
+   private WebElement newContactsLink;
     
     @FindBy(xpath="//select[@name='title']")
-    WebElement drpDownTitle;
+    private WebElement drpDownTitle;
     
     @FindBy(xpath = "//input[@id='first_name']")
-    WebElement txtFirstName;
+    private WebElement txtFirstName;
 
     @FindBy(xpath = "//input[@id='middle_initial']")
-    WebElement txtMiddleName;
+    private WebElement txtMiddleName;
 
     @FindBy(xpath = "//input[@id='surname']")
-    WebElement txtSurNAme;
+    private WebElement txtSurNAme;
 
     @FindBy(xpath = "//input[@name='nickname']")
-    WebElement txtNickName;
+    private WebElement txtNickName;
 
     @FindBy(xpath = "//input[@name='client_lookup']")
-    WebElement txtCompanyName;
+    private WebElement txtCompanyName;
     
     @FindBy(xpath="(//input[@value='Lookup'])[1]")
-    WebElement btnCompanyLookup;
+    private WebElement btnCompanyLookup;
 
     @FindBy(xpath = "//input[@name='company_position']")
-    WebElement txtPosition;
+    private WebElement txtPosition;
 
     @FindBy(xpath = "//input[@name='department']")
-    WebElement txtDepartment;
+    private WebElement txtDepartment;
     
     @FindBy(xpath="(//input[@value='Lookup'])[2]")
-    WebElement btnSupervisorLookup;
+    private WebElement btnSupervisorLookup;
     
     @FindBy(xpath="//input[@name='contact_lookup_sup']")
-    WebElement txtSupervisor;
+    private WebElement txtSupervisor;
     
     @FindBy(xpath="//input[@id='search']")
-    WebElement txtSearchInLookup;
+    private WebElement txtSearchInLookup;
     
     @FindBy(xpath="//form[@id='lookupSearchForm']//input[@class='button']")
-    WebElement btnSearchInLookup;
+    private WebElement btnSearchInLookup;
     
     @FindBy(xpath="//form[@name='contactForm']//child::table//child::tbody//child::tr//child::td//input[@value='Save']")
-    WebElement btnSave;
+    private WebElement btnSave;
+    
+    @FindBy(css="input[name='cs_company_name']")
+    private WebElement searchCompany;
+    
+    @FindBy(css="input[name='cs_submit'][value='Search'].button")
+    private WebElement searchBtn;
+    
+    @FindBy(css="input[type='checkbox'][name='contact_id'][onClick*='checkAll']")
+    private WebElement selectAll;
+    
+   @FindBy(how=How.CSS, using="select.select[name='do_action']>option:nth-of-type(2)")
+   private WebElement deleteChecked;
+    
+   @FindBy(how=How.CSS, using = "input.button[value='DO']")
+   private WebElement doBtn;
+   
+    public WebElement getContactsPane() {
+        return contacts;
+    }
     
     /**
      * Getter for newContactsLink
@@ -188,11 +211,35 @@ public class ContactsPage extends TestBase {
     public WebElement getBtnSaveContact() {
         return btnSave;
     }
+    
+    public WebElement getSerchCompanyTxtBox() {
+        return searchCompany;
+    }
+    
+   public WebElement searchBtnInAdvanceSearch() {
+       return searchBtn;
+   }
+   
+   public WebElement getSelectAllCheckBox() {
+       return selectAll;
+   }
+   
+   public WebElement getDeleteCheckedOption() {
+       return deleteChecked;
+   }
+    
+   public WebElement getDoBtn() {
+       return doBtn;
+   }
+    
+    public void clkContactsPane() {
+        getContactsPane().click();
+    }
 
     /**
      * This method perform click operation on the New Contacts Link.
      */
-    public void clkContactsLink() {
+    public void clkNewContactsLink() {
         getNewContactsLink().click();
         CSLogger.info("Clicked on the New Contacts Link.");
     }
@@ -272,6 +319,7 @@ public class ContactsPage extends TestBase {
      * @param Department name String value containing the Department name
      */
     public void enterDepartmentName(String departmentName) {
+        getTextDepartmentName().clear();
         getTextDepartmentName().sendKeys(departmentName);
         CSLogger.info("Entered Department Name : " + departmentName);
     }
@@ -296,6 +344,7 @@ public class ContactsPage extends TestBase {
      * @Search string value contains Search characters.
      */
     public void enterSearchElementInLookupSearchBox(String search) {
+        getTxtSearchBoxInLookup().clear();
         getTxtSearchBoxInLookup().sendKeys(search);
         CSLogger.info("Entered String to search ");
     }
@@ -317,7 +366,26 @@ public class ContactsPage extends TestBase {
         CSLogger.info("Clicked on Save Button displayed in Contacts Information..!");
     }
     
+    public void enterCompanyNameToSearch(String companyName) {
+        getSerchCompanyTxtBox().sendKeys(companyName);
+    }
     
+    public void clkSearchBtnInAdvanceSearch() {
+        searchBtnInAdvanceSearch().click();
+        CSLogger.info("Clicked on Advance search button");
+    }
     
+    public void checkSelectAllCheckBox() {
+        getSelectAllCheckBox().click();
+        CSLogger.info("Clicked on 'Select All Checkbox'");
+    }
     
+    public void selectDeletedCheckedOption() {
+        getDeleteCheckedOption().click();
+        CSLogger.info("Selected Delete opton from dropdown");
+    }
+    
+    public void clkDoBtn() {
+        getDoBtn().click();
+    }
 }

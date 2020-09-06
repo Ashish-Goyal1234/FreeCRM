@@ -1,5 +1,5 @@
 
-package com.crm.qa.homePage;
+package com.crm.qa.test.contactspage;
 
 import java.util.Iterator;
 import java.util.Set;
@@ -15,7 +15,7 @@ import com.crm.qa.homepage.HomePage;
 import com.crm.qa.util.CSLogger;
 import com.crm.qa.util.TestUtil;
 
-public class ContactsPageTest extends TestBase {
+public class CreateContactsTest extends TestBase {
 
     public HomePage     homePage;
     public ContactsPage contactsPage;
@@ -35,7 +35,7 @@ public class ContactsPageTest extends TestBase {
         try {
             Actions action = new Actions(browserDriver);
             action.moveToElement(homePage.getContactsLink()).build().perform();
-            contactsPage.clkContactsLink();
+            contactsPage.clkNewContactsLink();
             CSLogger.info("Clicked on New Contacts link");
             addContactDetails(title, firstName, middleName, lastName, nickName,
                     companyName, position, departmentName,SearchSupervisor, SupervisorName);

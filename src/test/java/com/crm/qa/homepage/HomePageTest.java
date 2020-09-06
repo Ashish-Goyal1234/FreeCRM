@@ -1,4 +1,4 @@
-package com.crm.qa.homePage;
+package com.crm.qa.homepage;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

@@ -15,52 +15,52 @@ public class HomePage extends TestBase {
     }
 
     @FindBy(xpath = "//a[contains(text(),'Logout')]")
-    WebElement btnLogout;
+    private WebElement btnLogout;
     
     @FindBy(xpath="//a[contains(text(),'Home')]")
-    WebElement homeLink;
+    private WebElement homeLink;
     
     @FindBy(xpath="//a[contains(text(),'Calendar')]")
-    WebElement calenderLink;
+    private WebElement calenderLink;
     
     @FindBy(xpath="//a[contains(text(),'Companies')]")
-    WebElement companiesLink;
+    private WebElement companiesLink;
     
     @FindBy(xpath="//a[contains(text(),'Contacts')]")
-    WebElement contactsLink;
+    private WebElement contactsLink;
     
     @FindBy(xpath="//a[contains(text(),'Deals')]")
-    WebElement dealsLink;
+    private WebElement dealsLink;
     
     @FindBy(xpath="//a[contains(text(),'Tasks')]")
-    WebElement taskLink;
+    private WebElement taskLink;
     
     @FindBy(xpath="//a[contains(text(),'Cases')]")
-    WebElement casesLink;
+    private WebElement casesLink;
     
     @FindBy(xpath="//body/table/tbody/tr/td[@class='headertable']/div[@class='noprint']/div[@id='navmenu']/ul[@class='mlddm']/li[8]/a[1]")
-   WebElement callsLink; 
+   private WebElement callsLink; 
     
     @FindBy(xpath="//body/table/tbody/tr/td[@class='headertable']/div[@class='noprint']/div[@id='navmenu']/ul[@class='mlddm']/li[9]/a[1]")
-    WebElement emailLink;
+    private WebElement emailLink;
     
     @FindBy(xpath="//body/table/tbody/tr/td[@class='headertable']/div[@class='noprint']/div[@id='navmenu']/ul[@class='mlddm']/li[10]/a[1]")
-    WebElement text_smsLink;
+    private WebElement text_smsLink;
     
     @FindBy(xpath="//body/table/tbody/tr/td[@class='headertable']/div[@class='noprint']/div[@id='navmenu']/ul[@class='mlddm']/li[11]/a[1]")
-    WebElement printLink;
+    private WebElement printLink;
     
     @FindBy(xpath="//body/table/tbody/tr/td[@class='headertable']/div[@class='noprint']/div[@id='navmenu']/ul[@class='mlddm']/li[11]/a[1]")
-    WebElement campaignLink;
+    private WebElement campaignLink;
     
     @FindBy(xpath="//a[contains(text(),'Docs')]")
-    WebElement docsLink;
+    private WebElement docsLink;
     
     @FindBy(xpath="//a[contains(text(),'Forms')]")
-    WebElement formsLink;
+    private WebElement formsLink;
     
     @FindBy(xpath="//a[contains(text(),'Reports')]")
-    WebElement reportsLink;
+    private WebElement reportsLink;
     
 
         /**

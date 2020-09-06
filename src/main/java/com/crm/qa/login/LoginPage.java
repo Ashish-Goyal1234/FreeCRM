@@ -19,34 +19,34 @@ public class LoginPage extends TestBase {
     //PageFactory or Object repository
     
         @FindBy(xpath ="//a[contains(text(),'Home')]")
-        WebElement homeLink;
+        private WebElement homeLink;
         
         @FindBy(xpath="//a[contains(text(),'Sign Up')]")
-        WebElement signUpLink;
+        private WebElement signUpLink;
         
         @FindBy(xpath="//a[contains(text(),'Pricing')]")
-        WebElement pricingLink;
+        private WebElement pricingLink;
         
         @FindBy(xpath="//a[contains(text(),'Features')]")
-        WebElement featuresLink;
+        private WebElement featuresLink;
         
         @FindBy(xpath="//a[contains(text(),'Customers')]")
-        WebElement customersLink;
+        private WebElement customersLink;
         
         @FindBy(xpath="//a[contains(text(),'Contact')]")
-        WebElement contactsLink;
+        private WebElement contactsLink;
         
         @FindBy(name = "username")
-        WebElement txtUsername;
+        private WebElement txtUsername;
 
         @FindBy(name = "password")
-        WebElement txtPassword;
+        private WebElement txtPassword;
         
         @FindBy(xpath="//input[@type='submit']")
-        WebElement btnSubmit;
+        private WebElement btnSubmit;
         
         @FindBy(xpath="(//img[contains(@class,'img-responsive')])[1]")
-        WebElement imgCrmProLogo;
+        private WebElement imgCrmProLogo;
 
         
         /**
