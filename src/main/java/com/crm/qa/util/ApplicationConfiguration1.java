@@ -67,6 +67,7 @@ public class ApplicationConfiguration1 {
     */
    public String getBrowserName() {
        if (config != null) {
+        //   return System.getProperty("browser");
            return config.getProperty("browser");
        }
        return null;

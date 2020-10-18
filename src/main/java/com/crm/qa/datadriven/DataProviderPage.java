@@ -6,9 +6,10 @@ import com.crm.qa.base.TestBase;
 
 public class DataProviderPage extends TestBase {
 	
-	private String LoginSheetName				 = "Logintest";
+	private String LoginSheetName				               = "Logintest";
 	private String contactsDetailsSheetName                           = "NewContactsDetailstest";
-	private String deleteContactsSheetName                 = "DeleteContacts";
+	private String deleteContactsSheetName                            = "DeleteContacts";
+	private String createTaskSheetName                                    = "createTask";
 	
 	@DataProvider(name = "CredentailsTestData")
 	public Object[][] getCredentailsTestData() {
@@ -24,4 +25,10 @@ public class DataProviderPage extends TestBase {
 	public Object[][] getDeleteContactsDetailsTestData() {
 	    return DataDrivenScript.readSheetData(config.getExcelSheetPath("contactsTestCases"), deleteContactsSheetName);
 	}
+	
+	@DataProvider(name="createTaskInCalender")
+        public Object[][] getcreateTaskInCalenderTestData() {
+            return DataDrivenScript.readSheetData(config.getExcelSheetPath("calendarTestCases"), createTaskSheetName);
+        }
+	
 }

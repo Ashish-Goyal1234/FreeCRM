@@ -27,6 +27,7 @@
 					<suiteXmlFiles>
 						<suiteXmlFile>src/main/resources/TestFileForHomePage.xml</suiteXmlFile>
 						<suiteXmlFile>src/main/resources/TestFileForContactsPage.xml</suiteXmlFile>
+						<suiteXmlFile>src/main/resources/TestFileForCalenderPage.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
@@ -71,12 +72,6 @@
 			<artifactId>testng</artifactId>
 			<version>6.14.2</version>
 			<scope>compile</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi-ooxml</artifactId>
-			<version>3.17</version>
 		</dependency>
 
 		<!--Bonigracia Dependency -->

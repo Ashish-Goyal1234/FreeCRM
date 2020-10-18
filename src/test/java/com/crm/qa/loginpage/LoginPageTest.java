@@ -7,19 +7,18 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import com.crm.qa.base.TestBase;
 import com.crm.qa.datadriven.DataProviderPage;
-import com.crm.qa.homepage.HomePage;
 import com.crm.qa.login.LoginPage;
 import com.crm.qa.util.CSLogger;
 
 public class LoginPageTest extends TestBase {
 
     private LoginPage loginPage;
-    private HomePage homePage;
+
 
     @BeforeMethod
     public void initializeResource() {
         loginPage = new LoginPage();
-        homePage= new HomePage();
+    
     }
 
     /*
