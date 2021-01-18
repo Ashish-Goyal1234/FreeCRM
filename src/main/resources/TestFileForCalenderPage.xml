@@ -20,9 +20,9 @@
 		</classes>
 	</test>
 	
-	<!-- <test name="Logout Test">
+	<test name="Logout Test">
 		<classes>
 			<class name="com.crm.qa.logout.LogoutPageTest" />
 		</classes>
-	</test> -->
+	</test>
 </suite>

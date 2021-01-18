@@ -37,8 +37,4 @@
 			<class name="com.crm.qa.logout.LogoutPageTest" />
 		</classes>
 	</test>
-
-
-
-
 </suite>

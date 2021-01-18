@@ -21,19 +21,9 @@ public class LoginPageTest extends TestBase {
     
     }
 
-    /*
-     * @Test public void loginPageTitle() { String title =
-     * loginpage.validateLoginPageTitle(); Assert.assertEquals(title,
-     * "CRMPRO - CRM software for customer relationship management, sales, and support."
-     * ); }
-     */
-    /*
-     * @Test public void crmLogoImageTest(){ boolean flag =
-     * loginpage.validateCRMImage(); Assert.assertTrue(flag); }
-     */
 @Test(priority=1)
     public void verifyElementPresentTest() {
-        browserDriver.get(config.getUrl());
+      //  browserDriver.get(config.getUrl());
         int elementCount = 0;
         elementCount += (loginPage.getHomeLink() == null ? 0 : 1);
         elementCount += (loginPage.getSignUpLink() == null ? 0 : 1);
@@ -50,7 +40,7 @@ public class LoginPageTest extends TestBase {
     }
 
         @Test(priority=2)
-        public void verifyPageTitleOfLoginPageTest() {
+        public void getTitleOfLoginPage() {
             String title = browserDriver.getTitle();
             String Actual_title = "CRMPRO - CRM software for customer relationship management, sales, and support.";
             if(Actual_title.contentEquals(title)){
@@ -76,22 +66,11 @@ public class LoginPageTest extends TestBase {
         CSLogger.info("Entered Password");
         loginPage.clkSubmitButton();
         CSLogger.info("Clicked on Submit Button");
-        
-        /*WebElement homePageButton =homePage.getBtnLogout();
-        
-        if(homePageButton.isDisplayed()){
-            CSLogger.info("User Entered Valid Credential...! : "+ username +password);
-        }else{
-            CSLogger.info("User Entered Invalid Creadentials :"+ username +password);
-        } */
     }
         catch(Exception e){
             CSLogger.debug("Failed to Login");
         }
     }
 }
-/*    @AfterMethod
-    public void tearDown() {
-        browserDriver.quit()
-    };*/
+
 

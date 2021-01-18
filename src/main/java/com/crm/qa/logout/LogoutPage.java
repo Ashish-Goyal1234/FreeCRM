@@ -1,5 +1,6 @@
 package com.crm.qa.logout;
 
+import java.util.List;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -11,18 +12,17 @@ public class LogoutPage extends TestBase{
         PageFactory.initElements(browserDriver, this);
     }
     
-    @FindBy(xpath="//a[@class='topnavlink'] /i[@class='fa fa-sign-out icon-2x']")
-    private WebElement logout;
+    @FindBy(className=".topnavlink")
+    private List<WebElement> logout;
     
-    public WebElement getLogoutBtn() {
+    public List<WebElement> getLogoutBtn() {
         return logout;
     }
     
     
-    public void clkLogout(){
-        getLogoutBtn().click();
+    public void clkLogout() throws InterruptedException{
+        Thread.sleep(2000);
+        browserDriver.switchTo().frame("mainpanel");
+        getLogoutBtn().get(2).click();
     }
-    
-    
-    
 }

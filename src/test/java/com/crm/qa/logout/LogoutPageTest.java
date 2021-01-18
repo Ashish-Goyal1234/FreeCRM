@@ -10,16 +10,15 @@ public class LogoutPageTest {
     
     public LogoutPage logout;
     public LoginPage login;
-
     @BeforeMethod
     public void Initialization() {
         logout = new LogoutPage();
         login = new LoginPage();
-    }
+       }
     
     
     @Test(priority=1)
-    public void testLogout() {
+    public void testLogout() throws InterruptedException {
         logout.clkLogout();
         CSLogger.info("Clicked On Logout Button");
     }

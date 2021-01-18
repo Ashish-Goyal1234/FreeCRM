@@ -9,20 +9,21 @@
 	</listeners>
 
 	<test name="Login Test">
-		<classes>	
-			<class name="com.crm.qa.loginpage.LoginPageTest" />
+		<classes>
+			<class name="com.crm.qa.loginpage.LoginPageTest" >
+				<methods>
+					<include name ="verifyElementPresentTest"/>
+				</methods>
+			</class>
 		</classes>
 	</test>
-
-	<test name="Home Page Test">
+ <test name="Logout Test">
 		<classes>
-			<class name="com.crm.qa.homepage.HomePageTest" />
-		</classes>
-	</test>
-	
-		<test name="Logout Test">
-		<classes>
-			<class name="com.crm.qa.logout.LogoutPageTest" />
+			<class name="com.crm.qa.logout.LogoutPageTest" >
+			<methods>
+				<include name="verifyLogout" />
+			</methods>
+			</class>
 		</classes>
 	</test>
 </suite>

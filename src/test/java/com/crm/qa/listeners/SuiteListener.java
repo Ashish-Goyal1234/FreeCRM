@@ -77,6 +77,7 @@ public class SuiteListener extends SuiteAdapter {
         setTimeouts(config, webDriverInstance.manage());
         webDriverInstance.manage().window().maximize();
         suite.setAttribute("driverForBrowser", webDriverInstance);
+        webDriverInstance.get(config.getUrl());
     }
 
     /**
